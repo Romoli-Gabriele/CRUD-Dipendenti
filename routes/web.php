@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DipendenteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('dipendente', DipendenteController::class);
+Route::get('/', fn()=> redirect('dipendente'));
