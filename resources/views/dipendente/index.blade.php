@@ -21,8 +21,12 @@
         <td>{{$dipendente->lastName}}</td>
         <td>{{$dipendente->gender}}</td>
         <td>{{$dipendente->birthDate}}</td>
-        <td>{{$dipendente->timestamps}}</td>
-        <td><form><button type="submit" class="bg-danger">Elimina</button></form></td>
+        <td>{{$dipendente->hireDate}}</td>
+        <td>
+          <form action="{{route('dipendente.delete', ['dipendente'=>$dipendente->id])}}" method="POST">
+            @csrf
+            @method('delete')
+            <button type="submit" class="bg-danger">Elimina</button></form></td>
     </tr>
     @endforeach
 </table>
