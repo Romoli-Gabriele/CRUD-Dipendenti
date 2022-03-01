@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
                 "firstName" => "Parto",
                 "lastName" => "Bamford",
                 "gender" => "M",
-                "hireDate" => "1986-08-27T22:00:00.000+0000",
+                "hireDate" => "1986-08-27",
             ],
             [
                 "id" => 10004,
@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
                 "firstName" => "Kyoichi",
                 "lastName" => "Maliniak",
                 "gender" => "M",
-                "hireDate" => "1989-09-11T22:00:00.000+0000",
+                "hireDate" => "1989-09-11",
             ],
         ];
         foreach($dipendenti as $dipendente)

@@ -9,7 +9,7 @@ class DipendenteController extends Controller
 {
     function index()
     {
-        return view('dipendente.index', Dipendente::all());
+        return view('dipendente.index', ['dipendenti'=>Dipendente::all()]);
     }
     function create()
     {
