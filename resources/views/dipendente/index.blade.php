@@ -1,7 +1,7 @@
 @extends('layout')
 @section('body')
 <h1>Dipendenti</h1>
-<a class="bg-success">Aggiungi</a>
+<a href="{{route('dipendente.create')}}" class="btn-success">Aggiungi</a>
 <table class="table table-striped table table-bordered">
     <thead>
       <tr>
@@ -23,10 +23,10 @@
         <td>{{$dipendente->birthDate}}</td>
         <td>{{$dipendente->hireDate}}</td>
         <td>
-          <form action="{{route('dipendente.delete', ['dipendente'=>$dipendente->id])}}" method="POST">
+          <form action="{{route('dipendente.destroy', ['dipendente'=>$dipendente->id])}}" method="POST">
             @csrf
             @method('delete')
-            <button type="submit" class="bg-danger">Elimina</button></form></td>
+            <button type="submit" class="btn btn-danger">Elimina</button></form></td>
     </tr>
     @endforeach
 </table>
