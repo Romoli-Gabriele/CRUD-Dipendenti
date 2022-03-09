@@ -9,7 +9,7 @@ class DipendenteController extends Controller
 {
     function index()
     {
-        return view('dipendente.index', ['dipendenti'=>Dipendente::all()]);
+        return view('dipendente.index', ['dipendenti'=>Dipendente::latest()->paginate(3)->withQueryString()]);
     }
     function create()
     {
