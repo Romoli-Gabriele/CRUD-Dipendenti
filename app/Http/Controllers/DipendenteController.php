@@ -9,28 +9,27 @@ class DipendenteController extends Controller
 {
     function index()
     {
-        return view('dipendente.index', ['dipendenti'=>Dipendente::latest()->paginate(3)->withQueryString()]);
+        return response()->json(Dipendente::all());
     }
-    function create()
-    {
-        return view('dipendente.create');
-    }
+    
     function store()
     {
         $dipendente = new Dipendente($_REQUEST);
         $dipendente->save();
-        return redirect('dipendente');
+        return response()->json($dipendente);
     }
-    function edit()
-    {
-        return view('dipendente.edit');
-    }
+    
     function update(Dipendente $dipendente)
     {
         $dipendente->update($_REQUEST);
+        return response()->json($dipendente);
+    }
+    function show(Dipendente $dipendente){
+        return response()->json($dipendente);
     }
     function destroy(Dipendente $dipendente)
     {
         $dipendente->delete();
+        return response()->json('deleted with success');
     }
 }
